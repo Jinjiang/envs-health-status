@@ -22,11 +22,11 @@ jobs:
         bvm upgrade
         bit --version
         bit new vue-bare my-bare-vue-workspace --env bitdev.vue/vue-env
-        # fix the missing dep
-        bit install vue
     - name: Check initial status
       run: |
         cd my-bare-vue-workspace
+        # fix the missing dep
+        bit install vue
         bit list
         bit status
         bit templates
