@@ -21,7 +21,7 @@ jobs:
         bvm versions
         bvm upgrade
         bit --version
-        bit new vue-hello-world my-vue-hello-world --aspect learnbit-vue.hello-world/starters/hello-world@4c82a79a8434278b501432970d3aedc7b222cc5e
+        bit new vue-hello-world my-vue-hello-world --aspect teambit.community/starters/hello-world-vue@4241afd71045d2c2dbbf86b44ffeb856dc397f1f
     - name: Run the app component
       run: |
         cd my-vue-hello-world

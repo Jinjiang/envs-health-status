@@ -21,7 +21,7 @@ jobs:
         bvm versions
         bvm upgrade
         bit --version
-        bit new vue-todomvc my-vue-todomvc --aspect learnbit-vue.todomvc/starters/todomvc@1b7ad444b2d02e64ecda33e132d5c1abe9aacf5c
+        bit new vue-todomvc my-vue-todomvc --aspect teambit.community/starters/todomvc@da0ccc5ca406d91b20ac156fea3c1ccf493cd226
     - name: Run the app component
       run: |
         cd my-vue-todomvc
