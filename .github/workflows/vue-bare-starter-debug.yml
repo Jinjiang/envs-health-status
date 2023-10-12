@@ -26,7 +26,7 @@ jobs:
       run: |
         cd my-bare-vue-workspace
         # fix the missing dep
-        bit install vue
+        bit install @bitdev/vue.vue-env
         bit list
         bit status
         bit templates
