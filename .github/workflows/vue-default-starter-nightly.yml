@@ -47,7 +47,7 @@ jobs:
         bit install
         bit list
         cat workspace.jsonc
-        bit use apps/my-second
+        # bit use apps/my-second
         bit app list
         bit status
         bit run my-second-app &
