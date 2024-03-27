@@ -1,0 +1,50 @@
+name: Vue env - Learnbit - starters (nightly)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: bitsrc/nightly:latest
+    env:
+      HOME: /home/bituser
+
+    steps:
+      - name: Show BVM config
+        run: |
+          bvm config set RELEASE_TYPE nightly
+          bvm config
+          bvm versions
+          bvm upgrade
+          bit --version
+      - name: Initialize a workspace
+        run: |
+          bit new vue-design-system my-vue-design-system --aspect learnbit-vue.design-system/starters/design-system
+      - name: Run the app component
+        run: |
+          cd my-vue-design-system
+          bit run global-theme-app &
+          checkserver http://localhost:3000
+      - name: Preview components
+        run: |
+          cd my-vue-design-system
+          bit start &
+          checkserver http://localhost:3000
+      - name: Collaborate
+        run: |
+          cd my-vue-design-system
+          bit status
+      - name: Create a local scope, compile and export
+        run: |
+          barescope my-org.my-scope-name my-vue-hello-world
+          cd my-vue-design-system
+          bit scope rename org.scope-name my-org.my-scope-name --refactor
+          bit link
+          bit compile
+          bit tag --message "initial tag"
+          bit export
+    continue-on-error: false
