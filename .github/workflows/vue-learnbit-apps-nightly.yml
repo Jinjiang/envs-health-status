@@ -34,6 +34,9 @@ jobs:
         bit import learnbit-vue.basic/my-vite-app
         bit import learnbit-vue.basic/my-vite-hello-app
         bit import learnbit-vue.basic/my-vite-ssr-app
+        bit use my-vite-app
+        bit use my-vite-hello-app
+        bit use my-vite-ssr-app
         bit status
         bit install
         bit list
