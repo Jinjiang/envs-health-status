@@ -27,8 +27,10 @@ jobs:
       - name: Run the app component
         run: |
           cd my-vue-design-system
+          bit install
           bit list
           bit compile
+          bit status
           bit app list
           bit run global-theme-app &
           checkserver http://localhost:3000
