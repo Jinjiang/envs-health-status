@@ -27,6 +27,7 @@ jobs:
       - name: Run the app component
         run: |
           cd my-vue-design-system
+          bit app list
           bit run global-theme-app &
           checkserver http://localhost:3000
       - name: Preview components
