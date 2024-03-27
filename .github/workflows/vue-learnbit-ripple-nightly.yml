@@ -1,0 +1,205 @@
+name: Vue env - Learnbit - Ripple (nightly)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: 
+      image: bitsrc/nightly:latest
+    env:
+      HOME: /home/bituser
+        
+    steps:
+    - name: Initialize a workspace
+      run: |
+        bvm config set RELEASE_TYPE nightly
+        bvm config
+        bvm versions
+        bvm upgrade
+        bit --version
+        bit init my-vue-workspace --bare --log error
+    - name: Bit sign my-vite-ssr-app
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.basic/my-vite-ssr-app --multiple --rebuild --log error
+    - name: Bit sign my-vite-hello-app
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.basic/my-vite-hello-app --multiple --rebuild --log error
+    - name: Bit sign my-vite-app
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.basic/my-vite-app --multiple --rebuild --log error
+    - name: Bit sign my-composable
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.basic/my-composable --multiple --rebuild --log error
+    - name: Bit sign my-component
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.basic/my-component --multiple --rebuild --log error
+    - name: Bit sign hello-world-app
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.hello-world/hello-world-app --multiple --rebuild --log error
+    - name: Bit sign get-hello-world
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.hello-world/get-hello-world --multiple --rebuild --log error
+    - name: Bit sign ui/hello-world
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.hello-world/ui/hello-world --multiple --rebuild --log error
+    - name: Bit sign footer
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.todomvc/footer --multiple --rebuild --log error
+    - name: Bit sign header
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.todomvc/header --multiple --rebuild --log error
+    - name: Bit sign toggle-all
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.todomvc/toggle-all --multiple --rebuild --log error
+    - name: Bit sign todo-entity
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.todomvc/todo-entity --multiple --rebuild --log error
+    - name: Bit sign todo-list
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.todomvc/todo-list --multiple --rebuild --log error
+    - name: Bit sign todo-store
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.todomvc/todo-store --multiple --rebuild --log error
+    - name: Bit sign todo
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.todomvc/todo --multiple --rebuild --log error
+    - name: Bit sign app
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.todomvc/app --multiple --rebuild --log error
+    - name: Bit sign app-vite
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.todomvc/app-vite --multiple --rebuild --log error
+    - name: Bit sign envs/vue-env
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/envs/vue-env --multiple --rebuild --log error
+    - name: Bit sign button
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/button --multiple --rebuild --log error
+    - name: Bit sign mode-switch
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/mode-switch --multiple --rebuild --log error
+    - name: Bit sign apps/global-theme
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/apps/global-theme --multiple --rebuild --log error
+    - name: Bit sign banner
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/banner --multiple --rebuild --log error
+    - name: Bit sign textarea
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/textarea --multiple --rebuild --log error
+    - name: Bit sign card
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/card --multiple --rebuild --log error
+    - name: Bit sign apps/nested-themes
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/apps/nested-themes --multiple --rebuild --log error
+    - name: Bit sign theme/light-theme
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/theme/light-theme --multiple --rebuild --log error
+    - name: Bit sign theme/dark-theme
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/theme/dark-theme --multiple --rebuild --log error
+    - name: Bit sign envs/vue-composition-wrapper
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/envs/vue-composition-wrapper --multiple --rebuild --log error
+    - name: Bit sign starters/design-system
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/starters/design-system --multiple --rebuild --log error
+    - name: Bit sign theme/blue-theme
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/theme/blue-theme --multiple --rebuild --log error
+    - name: Bit sign theme/base-theme
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/theme/base-theme --multiple --rebuild --log error
+    - name: Bit sign theme/orange-theme
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.design-system/theme/orange-theme --multiple --rebuild --log error
+    - name: Bit sign composables/brewery
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.data-fetching/composables/brewery --multiple --rebuild --log error
+    - name: Bit sign ui/characters-list
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.data-fetching/ui/characters-list --multiple --rebuild --log error
+    - name: Bit sign brewery-app
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.data-fetching/brewery-app --multiple --rebuild --log error
+    - name: Bit sign entities/brewery
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.data-fetching/entities/brewery --multiple --rebuild --log error
+    - name: Bit sign starters/data-fetching
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.data-fetching/starters/data-fetching --multiple --rebuild --log error
+    - name: Bit sign envs/my-vue-env
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.graphql/envs/my-vue-env --multiple --rebuild --log error
+    - name: Bit sign user-app
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.graphql/user-app --multiple --rebuild --log error
+    - name: Bit sign servers/my-apollo-server
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.graphql/servers/my-apollo-server --multiple --rebuild --log error
+    - name: Bit sign composables/user
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.graphql/composables/user --multiple --rebuild --log error
+    - name: Bit sign envs/my-vue-wrapper
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.graphql/envs/my-vue-wrapper --multiple --rebuild --log error
+    - name: Bit sign entities/user
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.graphql/entities/user --multiple --rebuild --log error
+    - name: Bit sign clients/my-apollo-client
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.graphql/clients/my-apollo-client --multiple --rebuild --log error
+    - name: Bit sign starters/graphql
+      run: |
+        cd my-vue-workspace
+        bit sign learnbit-vue.graphql/starters/graphql --multiple --rebuild --log error
+    continue-on-error: false
