@@ -80,4 +80,36 @@ jobs:
           bit compile
           bit tag --message "initial tag"
           bit export
+
+      - name: Initialize a workspace (graphql)
+        run: |
+          bit new vue-graphql my-graphql --aspect learnbit-vue.graphql/starters/graphql
+      - name: Run the app component (graphql)
+        run: |
+          cd my-graphql
+          # debug
+          bit compile
+          bit app list
+          bit run my-apollo-server --port 4000 &
+          checkserver http://localhost:4000
+          bit run user-app &
+          checkserver http://localhost:3000
+      - name: Preview components (graphql)
+        run: |
+          cd my-graphql
+          bit start &
+          checkserver http://localhost:3000
+      - name: Collaborate (graphql)
+        run: |
+          cd my-graphql
+          bit status
+      - name: Create a local scope, compile and export (graphql)
+        run: |
+          barescope my-org.my-scope-name my-graphql
+          cd my-graphql
+          bit scope rename org.scope-name my-org.my-scope-name --refactor
+          bit link
+          bit compile
+          bit tag --message "initial tag"
+          bit export
     continue-on-error: false
