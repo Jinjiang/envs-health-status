@@ -30,7 +30,7 @@ jobs:
           # debug
           bit compile
           bit app list
-          bit run global-theme-app &
+          bit run my-app &
           checkserver http://localhost:3000
       - name: Preview components
         run: |
