@@ -62,31 +62,37 @@ jobs:
         cd my-vue-workspace
         bit run my-vite-app &
         checkserver http://localhost:3000
+        pkill -f "bit run my-vite-app"
     - name: my-vite-hello-app
       run: |
         cd my-vue-workspace
         bit run my-vite-hello-app &
         checkserver http://localhost:3000
+        pkill -f "bit run my-vite-hello-app"
     - name: my-vite-ssr-app
       run: |
         cd my-vue-workspace
         bit run my-vite-ssr-app &
         checkserver http://localhost:3000
+        pkill -f "bit run my-vite-ssr-app"
     - name: global-theme
       run: |
         cd my-vue-workspace
         bit run global-theme &
         checkserver http://localhost:3000
+        pkill -f "bit run global-theme"
     - name: nested-themes
       run: |
         cd my-vue-workspace
         bit run nested-themes &
         checkserver http://localhost:3000
+        pkill -f "bit run nested-themes"
     - name: brewery-app
       run: |
         cd my-vue-workspace
         bit run brewery-app &
         checkserver http://localhost:3000
+        pkill -f "bit run brewery-app"
     - name: user-app
       run: |
         cd my-vue-workspace
@@ -94,6 +100,8 @@ jobs:
         checkserver http://localhost:4000
         bit run user-app &
         checkserver http://localhost:3000
+        pkill -f "bit run user-app"
+        pkill -f "bit run my-apollo-server"
     - name: Lint and test
       run: |
         cd my-vue-workspace
