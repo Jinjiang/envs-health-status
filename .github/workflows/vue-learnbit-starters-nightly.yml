@@ -21,10 +21,10 @@ jobs:
           bvm versions
           bvm upgrade
           bit --version
-      - name: Initialize a workspace
+      - name: Initialize a workspace (design system)
         run: |
           bit new vue-design-system my-vue-design-system --aspect learnbit-vue.design-system/starters/design-system
-      - name: Run the app component
+      - name: Run the app component (design system)
         run: |
           cd my-vue-design-system
           # debug
@@ -32,19 +32,49 @@ jobs:
           bit app list
           bit run my-app &
           checkserver http://localhost:3000
-      - name: Preview components
+      - name: Preview components (design system)
         run: |
           cd my-vue-design-system
           bit start &
           checkserver http://localhost:3000
-      - name: Collaborate
+      - name: Collaborate (design system)
         run: |
           cd my-vue-design-system
           bit status
-      - name: Create a local scope, compile and export
+      - name: Create a local scope, compile and export (design system)
         run: |
-          barescope my-org.my-scope-name my-vue-hello-world
+          barescope my-org.my-scope-name my-vue-design-system
           cd my-vue-design-system
+          bit scope rename org.scope-name my-org.my-scope-name --refactor
+          bit link
+          bit compile
+          bit tag --message "initial tag"
+          bit export
+
+      - name: Initialize a workspace (data-fetching)
+        run: |
+          bit new vue-data-fetching my-vue-data-fetching --aspect learnbit-vue.data-fetching/starters/data-fetching
+      - name: Run the app component (data-fetching)
+        run: |
+          cd my-vue-data-fetching
+          # debug
+          bit compile
+          bit app list
+          bit run brewery-app &
+          checkserver http://localhost:3000
+      - name: Preview components (data-fetching)
+        run: |
+          cd my-vue-data-fetching
+          bit start &
+          checkserver http://localhost:3000
+      - name: Collaborate (data-fetching)
+        run: |
+          cd my-vue-data-fetching
+          bit status
+      - name: Create a local scope, compile and export (data-fetching)
+        run: |
+          barescope my-org.my-scope-name my-vue-data-fetching
+          cd my-vue-data-fetching
           bit scope rename org.scope-name my-org.my-scope-name --refactor
           bit link
           bit compile
