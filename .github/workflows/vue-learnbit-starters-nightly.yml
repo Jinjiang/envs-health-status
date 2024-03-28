@@ -83,10 +83,10 @@ jobs:
 
       - name: Initialize a workspace (graphql)
         run: |
-          bit new vue-graphql my-graphql --aspect learnbit-vue.graphql/starters/graphql
+          bit new vue-graphql my-vue-graphql --aspect learnbit-vue.graphql/starters/graphql
       - name: Run the app component (graphql)
         run: |
-          cd my-graphql
+          cd my-vue-graphql
           # debug
           bit compile
           bit app list
@@ -96,17 +96,17 @@ jobs:
           checkserver http://localhost:3000
       - name: Preview components (graphql)
         run: |
-          cd my-graphql
+          cd my-vue-graphql
           bit start &
           checkserver http://localhost:3000
       - name: Collaborate (graphql)
         run: |
-          cd my-graphql
+          cd my-vue-graphql
           bit status
       - name: Create a local scope, compile and export (graphql)
         run: |
-          barescope my-org.my-scope-name my-graphql
-          cd my-graphql
+          barescope my-org.my-scope-name my-vue-graphql
+          cd my-vue-graphql
           bit scope rename org.scope-name my-org.my-scope-name --refactor
           bit link
           bit compile
