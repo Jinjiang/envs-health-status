@@ -103,13 +103,13 @@ jobs:
         run: |
           cd my-vue-graphql
           bit status
-      - name: Create a local scope, compile and export (graphql)
-        run: |
-          barescope my-org.my-scope-name my-vue-graphql
-          cd my-vue-graphql
-          bit scope rename org.scope-name my-org.my-scope-name --refactor
-          bit link
-          bit compile
-          bit tag --message "initial tag"
-          bit export
+      # - name: Create a local scope, compile and export (graphql)
+      #   run: |
+      #     barescope my-org.my-scope-name my-vue-graphql
+      #     cd my-vue-graphql
+      #     bit scope rename org.scope-name my-org.my-scope-name --refactor
+      #     bit link
+      #     bit compile
+      #     bit tag --message "initial tag"
+      #     bit export
     continue-on-error: false
