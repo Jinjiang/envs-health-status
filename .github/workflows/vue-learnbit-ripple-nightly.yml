@@ -90,10 +90,10 @@ jobs:
       run: |
         cd my-vue-workspace
         bit sign learnbit-vue.todomvc/app-vite --multiple --rebuild --log error
-    - name: Bit sign envs/vue-env
+    - name: Bit sign design system - envs/my-vue-env
       run: |
         cd my-vue-workspace
-        bit sign learnbit-vue.design-system/envs/vue-env --multiple --rebuild --log error
+        bit sign learnbit-vue.design-system/envs/my-vue-env --multiple --rebuild --log error
     - name: Bit sign button
       run: |
         cd my-vue-workspace
@@ -130,10 +130,10 @@ jobs:
       run: |
         cd my-vue-workspace
         bit sign learnbit-vue.design-system/theme/dark-theme --multiple --rebuild --log error
-    - name: Bit sign envs/vue-composition-wrapper
+    - name: Bit sign design-system - envs/my-vue-wrapper
       run: |
         cd my-vue-workspace
-        bit sign learnbit-vue.design-system/envs/vue-composition-wrapper --multiple --rebuild --log error
+        bit sign learnbit-vue.design-system/envs/my-vue-wrapper --multiple --rebuild --log error
     - name: Bit sign starters/design-system
       run: |
         cd my-vue-workspace
