@@ -1,0 +1,89 @@
+name: Vite - Ripple (nightly)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: 
+      image: bitsrc/nightly:latest
+    env:
+      HOME: /home/bituser
+        
+    steps:
+    - name: Initialize a workspace
+      run: |
+        bvm config set RELEASE_TYPE nightly
+        bvm config
+        bvm versions
+        bvm upgrade
+        bit --version
+        bit init my-vite-workspace --bare --log error
+    - name: Bit sign pre-bundles/react/ui/docs-app
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/pre-bundles/react/ui/docs-app --multiple --rebuild --log error
+    - name: Bit sign esm-packages/vite
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/esm-packages/vite --multiple --rebuild --log error
+    - name: Bit sign esm-packages/vitest
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/esm-packages/vitest --multiple --rebuild --log error
+    - name: Bit sign examples/react/my-component
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/react/my-component --multiple --rebuild --log error
+    - name: Bit sign examples/react/my-react-env
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/react/my-react-env --multiple --rebuild --log error
+    - name: Bit sign examples/react/my-react-preview
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/react/my-react-preview --multiple --rebuild --log error
+    - name: Bit sign examples/vue/my-component
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/vue/my-component --multiple --rebuild --log error
+    - name: Bit sign examples/vue/my-second
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/vue/my-second --multiple --rebuild --log error
+    - name: Bit sign examples/vue/my-vue-env
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/vue/my-vue-env --multiple --rebuild --log error
+    - name: Bit sign examples/vue/my-vue-preview
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/vue/my-vue-preview --multiple --rebuild --log error
+    - name: Bit sign examples/vue/vue-preview
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/vue/vue-preview --multiple --rebuild --log error
+    - name: Bit sign examples/vue/vue
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/vue/vue --multiple --rebuild --log error
+    - name: Bit sign vite-bundler
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vite-bundler --multiple --rebuild --log error
+    - name: Bit sign vite-dev-server
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vite-dev-server --multiple --rebuild --log error
+    - name: Bit sign vite-utils
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vite-utils --multiple --rebuild --log error
+    - name: Bit sign vitest-tester
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vitest-tester --multiple --rebuild --log error
+    continue-on-error: true
