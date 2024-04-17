@@ -44,7 +44,7 @@ jobs:
         bit install
         bit list
         # debug
-        bit use apps/my-second
+        # bit use apps/my-second
         bit app list
         bit compile
         bit app list
