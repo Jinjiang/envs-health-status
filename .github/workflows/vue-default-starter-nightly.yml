@@ -47,10 +47,14 @@ jobs:
         # bit use apps/my-second
         bit app list
         bit compile
+        bit status
         bit app list
         bit install
-        bit app list
         bit status
+        bit app list
+        bit install --add-missing-deps
+        bit status
+        bit app list
         bit run my-second-app &
         checkserver http://localhost:3000
     - name: Lint and test
