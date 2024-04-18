@@ -55,7 +55,7 @@ jobs:
         bit install --add-missing-deps
         bit status
         bit app list
-        bit run my-second-app &
+        bit run my-second &
         checkserver http://localhost:3000
     - name: Lint and test
       run: |
