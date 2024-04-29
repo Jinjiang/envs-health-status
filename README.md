@@ -3,8 +3,8 @@
 ## Signs
 
 - vue-quickstart-ripple-nightly.yml (skipped)
-- vite-ripple-nightly.yml
-- vue-ripple-nightly.yml
+- vite-ripple-nightly.yml (new)
+- vue-ripple-nightly.yml (new)
 
 ```bash
 learnbit-vue.hello-world
@@ -17,6 +17,8 @@ bitdev.vue
 
 - vue-bare-starter-nightly.yml (synced)
 - vue-default-starter-nightly.yml (synced)
+- vue-classic-starter-nightly.yml (new)
+- vue-modern-starter-nightly.yml (new)
 
 ```bash
 bit new
@@ -44,9 +46,9 @@ bit scope rename
 
 ## Learnbit
 
-- vue-learnbit-starters-nightly.yml
-- vue-learnbit-apps-nightly.yml
-- vue-learnbit-ripple-nightly.yml
+- vue-learnbit-starters-nightly.yml (new)
+- vue-learnbit-apps-nightly.yml (new)
+- vue-learnbit-ripple-nightly.yml (new)
 
 ```bash
 bit new && bit run && bit start && bit status && bit scope rename
