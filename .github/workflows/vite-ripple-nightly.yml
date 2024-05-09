@@ -63,14 +63,14 @@ jobs:
       run: |
         cd my-vite-workspace
         bit sign teambit.vite/examples/vue/my-vue-preview --multiple --rebuild --log error
-    - name: Bit sign examples/vue/vue-preview
-      run: |
-        cd my-vite-workspace
-        bit sign teambit.vite/examples/vue/vue-preview --multiple --rebuild --log error
-    - name: Bit sign examples/vue/vue
-      run: |
-        cd my-vite-workspace
-        bit sign teambit.vite/examples/vue/vue --multiple --rebuild --log error
+    # - name: Bit sign examples/vue/vue-preview
+    #   run: |
+    #     cd my-vite-workspace
+    #     bit sign teambit.vite/examples/vue/vue-preview --multiple --rebuild --log error
+    # - name: Bit sign examples/vue/vue
+    #   run: |
+    #     cd my-vite-workspace
+    #     bit sign teambit.vite/examples/vue/vue --multiple --rebuild --log error
     - name: Bit sign vite-bundler
       run: |
         cd my-vite-workspace
