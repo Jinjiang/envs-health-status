@@ -47,9 +47,10 @@ jobs:
           cd my-vue-design-system
           bit scope rename org.scope-name my-org.my-scope-name --refactor
           bit link
-          bit compile
-          bit tag --message "initial tag"
-          bit export
+          # debug
+          bit compile --log error
+          bit tag --message "initial tag" --log error
+          bit export --log error
 
       - name: Initialize a workspace (data-fetching)
         run: |
