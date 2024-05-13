@@ -50,11 +50,10 @@ jobs:
       run: |
         cd my-vite-workspace
         bit sign teambit.vite/examples/vue/my-component --multiple --rebuild --log error
-    # # debug
-    # - name: Bit sign examples/vue/my-second
-    #   run: |
-    #     cd my-vite-workspace
-    #     bit sign teambit.vite/examples/vue/my-second --multiple --rebuild --log error
+    - name: Bit sign examples/vue/my-second
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/vue/my-second --multiple --rebuild --log error
     - name: Bit sign examples/vue/my-vue-env
       run: |
         cd my-vite-workspace
@@ -63,14 +62,6 @@ jobs:
       run: |
         cd my-vite-workspace
         bit sign teambit.vite/examples/vue/my-vue-preview --multiple --rebuild --log error
-    # - name: Bit sign examples/vue/vue-preview
-    #   run: |
-    #     cd my-vite-workspace
-    #     bit sign teambit.vite/examples/vue/vue-preview --multiple --rebuild --log error
-    # - name: Bit sign examples/vue/vue
-    #   run: |
-    #     cd my-vite-workspace
-    #     bit sign teambit.vite/examples/vue/vue --multiple --rebuild --log error
     - name: Bit sign vite-bundler
       run: |
         cd my-vite-workspace
