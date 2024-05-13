@@ -109,8 +109,16 @@ jobs:
           barescope my-org.my-scope-name my-vue-graphql
           cd my-vue-graphql
           bit scope rename org.scope-name my-org.my-scope-name --refactor
+          # debug
+          echo "[bit link]"
           bit link
-          bit compile
-          bit tag --message "initial tag"
+          # debug
+          echo "[bit compile]"
+          bit compile --log error
+          # debug
+          echo "[bit tag]"
+          bit tag --message "initial tag" --log error
+          # debug
+          echo "[bit export]"
           bit export
     continue-on-error: true
