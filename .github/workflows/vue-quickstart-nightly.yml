@@ -46,6 +46,7 @@ jobs:
           cat workspace.jsonc
           bit link
           # debug
+          bit install
           bit ws-config write
           bit install
           bit compile
