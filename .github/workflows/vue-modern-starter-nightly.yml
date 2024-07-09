@@ -41,20 +41,13 @@ jobs:
       run: |
         cd my-vue-workspace
         bit create vue-app apps/my-second
-        bit install
-        bit list
-        # debug
         # bit use apps/my-second
-        bit app list
-        bit compile
-        bit status
-        bit app list
-        bit install
-        bit status
-        bit app list
+        # debug
+        # bit install
         bit install --add-missing-deps
-        bit status
+        bit list
         bit app list
+        bit status
         bit run my-second &
         checkserver http://localhost:3000
     - name: Lint and test
@@ -70,7 +63,9 @@ jobs:
         cd my-vue-workspace
         bit scope rename org.scope-name my-org.my-scope-name --refactor
         bit link
-        bit compile
+        # debug
+        # bit compile
+        bit install || bit compile
         bit tag --message "initial tag"
         bit export
     continue-on-error: false

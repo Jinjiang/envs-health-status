@@ -42,14 +42,9 @@ jobs:
           barescope my-org.my-scope-name my-vue-hello-world
           cd my-vue-hello-world
           bit scope rename org.scope-name my-org.my-scope-name --refactor
-          # debug
-          cat workspace.jsonc
           bit link
           # debug
-          bit install
-          bit ws-config write
-          bit install
-          bit compile
+          bit install || bit compile
           bit tag --message "initial tag"
           bit export
     continue-on-error: false
