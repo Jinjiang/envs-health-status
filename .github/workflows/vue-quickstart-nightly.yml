@@ -47,6 +47,7 @@ jobs:
           bit link
           # debug
           bit ws-config write
+          bit install
           bit compile
           bit tag --message "initial tag"
           bit export
