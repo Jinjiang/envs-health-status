@@ -114,4 +114,4 @@ jobs:
           bit tag --message "initial tag"
           # debug
           bit export --log error
-    continue-on-error: true
+    continue-on-error: false
