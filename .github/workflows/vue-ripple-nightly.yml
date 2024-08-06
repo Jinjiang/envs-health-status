@@ -122,4 +122,4 @@ jobs:
       run: |
         cd my-vue-workspace
         bit sign bitdev.vue/examples/my-vue-env --multiple --rebuild --log error
-    continue-on-error: true
+    continue-on-error: false
