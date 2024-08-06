@@ -202,4 +202,4 @@ jobs:
       run: |
         cd my-vue-workspace
         bit sign learnbit-vue.graphql/starters/graphql --multiple --rebuild --log error
-    continue-on-error: true
+    continue-on-error: false
