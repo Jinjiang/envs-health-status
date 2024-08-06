@@ -118,4 +118,4 @@ jobs:
         bit compile
         bit tag --message "initial tag"
         bit export
-    continue-on-error: true
+    continue-on-error: false
