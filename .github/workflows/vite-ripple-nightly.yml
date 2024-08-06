@@ -78,4 +78,4 @@ jobs:
       run: |
         cd my-vite-workspace
         bit sign teambit.vite/vitest-tester --multiple --rebuild --log error
-    continue-on-error: true
+    continue-on-error: false
