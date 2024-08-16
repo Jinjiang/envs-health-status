@@ -26,14 +26,6 @@ jobs:
       run: |
         cd my-vite-workspace
         bit sign teambit.vite/pre-bundles/react/ui/docs-app --multiple --rebuild --log error
-    - name: Bit sign esm-packages/vite
-      run: |
-        cd my-vite-workspace
-        bit sign teambit.vite/esm-packages/vite --multiple --rebuild --log error
-    - name: Bit sign esm-packages/vitest
-      run: |
-        cd my-vite-workspace
-        bit sign teambit.vite/esm-packages/vitest --multiple --rebuild --log error
     - name: Bit sign examples/react/my-component
       run: |
         cd my-vite-workspace
