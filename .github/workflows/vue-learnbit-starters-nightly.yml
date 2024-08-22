@@ -52,35 +52,35 @@ jobs:
       #     bit tag --message "initial tag" --log error
       #     bit export --log error
 
-      - name: Initialize a workspace (data-fetching)
-        run: |
-          bit new vue-data-fetching my-vue-data-fetching --aspect learnbit-vue.data-fetching/starters/data-fetching
-      - name: Run the app component (data-fetching)
-        run: |
-          cd my-vue-data-fetching
-          # debug
-          bit compile
-          bit app list
-          bit run brewery-app &
-          checkserver http://localhost:3000
-      - name: Preview components (data-fetching)
-        run: |
-          cd my-vue-data-fetching
-          bit start &
-          checkserver http://localhost:3000
-      - name: Collaborate (data-fetching)
-        run: |
-          cd my-vue-data-fetching
-          bit status
-      - name: Create a local scope, compile and export (data-fetching)
-        run: |
-          barescope my-org.my-scope-name1 my-vue-data-fetching
-          cd my-vue-data-fetching
-          bit scope rename org.scope-name my-org.my-scope-name1 --refactor
-          bit link
-          bit compile
-          bit tag --message "initial tag"
-          bit export
+      # - name: Initialize a workspace (data-fetching)
+      #   run: |
+      #     bit new vue-data-fetching my-vue-data-fetching --aspect learnbit-vue.data-fetching/starters/data-fetching
+      # - name: Run the app component (data-fetching)
+      #   run: |
+      #     cd my-vue-data-fetching
+      #     # debug
+      #     bit compile
+      #     bit app list
+      #     bit run brewery-app &
+      #     checkserver http://localhost:3000
+      # - name: Preview components (data-fetching)
+      #   run: |
+      #     cd my-vue-data-fetching
+      #     bit start &
+      #     checkserver http://localhost:3000
+      # - name: Collaborate (data-fetching)
+      #   run: |
+      #     cd my-vue-data-fetching
+      #     bit status
+      # - name: Create a local scope, compile and export (data-fetching)
+      #   run: |
+      #     barescope my-org.my-scope-name1 my-vue-data-fetching
+      #     cd my-vue-data-fetching
+      #     bit scope rename org.scope-name my-org.my-scope-name1 --refactor
+      #     bit link
+      #     bit compile
+      #     bit tag --message "initial tag"
+      #     bit export
 
       - name: Initialize a workspace (graphql)
         run: |
@@ -106,8 +106,10 @@ jobs:
           bit status
       - name: Create a local scope, compile and export (graphql)
         run: |
+          echo "[Create a local scope]"
           barescope my-org.my-scope-name2 my-vue-graphql
           cd my-vue-graphql
+          echo "[Compile]"
           bit scope rename org.scope-name my-org.my-scope-name2 --refactor
           bit link
           bit compile
