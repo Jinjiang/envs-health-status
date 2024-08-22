@@ -21,36 +21,36 @@ jobs:
           bvm versions
           bvm upgrade
           bit --version
-      - name: Initialize a workspace (design system)
-        run: |
-          bit new vue-design-system my-vue-design-system --aspect learnbit-vue.design-system/starters/design-system
-      - name: Run the app component (design system)
-        run: |
-          cd my-vue-design-system
-          # debug
-          bit compile
-          bit app list
-          bit run my-app &
-          checkserver http://localhost:3000
-      - name: Preview components (design system)
-        run: |
-          cd my-vue-design-system
-          bit start &
-          checkserver http://localhost:3000
-      - name: Collaborate (design system)
-        run: |
-          cd my-vue-design-system
-          bit status
-      - name: Create a local scope, compile and export (design system)
-        run: |
-          barescope my-org.my-scope-name my-vue-design-system
-          cd my-vue-design-system
-          bit scope rename org.scope-name my-org.my-scope-name --refactor
-          bit link
-          # debug
-          bit compile --log error
-          bit tag --message "initial tag" --log error
-          bit export --log error
+      # - name: Initialize a workspace (design system)
+      #   run: |
+      #     bit new vue-design-system my-vue-design-system --aspect learnbit-vue.design-system/starters/design-system
+      # - name: Run the app component (design system)
+      #   run: |
+      #     cd my-vue-design-system
+      #     # debug
+      #     bit compile
+      #     bit app list
+      #     bit run my-app &
+      #     checkserver http://localhost:3000
+      # - name: Preview components (design system)
+      #   run: |
+      #     cd my-vue-design-system
+      #     bit start &
+      #     checkserver http://localhost:3000
+      # - name: Collaborate (design system)
+      #   run: |
+      #     cd my-vue-design-system
+      #     bit status
+      # - name: Create a local scope, compile and export (design system)
+      #   run: |
+      #     barescope my-org.my-scope-name my-vue-design-system
+      #     cd my-vue-design-system
+      #     bit scope rename org.scope-name my-org.my-scope-name --refactor
+      #     bit link
+      #     # debug
+      #     bit compile --log error
+      #     bit tag --message "initial tag" --log error
+      #     bit export --log error
 
       - name: Initialize a workspace (data-fetching)
         run: |
