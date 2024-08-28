@@ -109,8 +109,8 @@ jobs:
           echo "[Create a local scope]"
           barescope my-org.my-scope-name2 my-vue-graphql
           cd my-vue-graphql
-          echo "[Compile]"
-          bit scope rename org.scope-name my-org.my-scope-name2 --refactor
+          echo "[Scope rename]"
+          bit scope rename org.scope-name my-org.my-scope-name2 --refactor --log error
           bit link
           bit compile
           bit tag --message "initial tag"
