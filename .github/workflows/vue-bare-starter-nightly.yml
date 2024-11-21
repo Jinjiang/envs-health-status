@@ -28,7 +28,7 @@ jobs:
         bit list
         bit status
         # debug
-        bit import bitdev.vue/vue-env
+        # bit import bitdev.vue/vue-env
         bit status
         bit templates
     - name: Create a new component
