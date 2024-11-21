@@ -27,9 +27,6 @@ jobs:
         cd my-bare-vue-workspace
         bit list
         bit status
-        # debug
-        # bit import bitdev.vue/vue-env
-        bit status
         bit templates
     - name: Create a new component
       run: |
