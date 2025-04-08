@@ -27,8 +27,8 @@ jobs:
         cd ~
         mkdir bit-sign
         cd bit-sign
-        npm init -y
-        npm install @teambit/dot-cli.sign --registry=https://registry.npmjs.org
+        pnpm init
+        pnpm install @teambit/dot-cli.sign --registry=https://node-registry.bit.cloud
         CURRENT_PATH=$(pwd)
         echo "Current path is: $CURRENT_PATH"
         cd ~
