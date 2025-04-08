@@ -28,6 +28,7 @@ jobs:
         mkdir bit-sign
         cd bit-sign
         bit init
+        bit config set user.token ${{ secrets.BIT_USER_TOKEN }}
         bit install @teambit/dot-cli.sign
         CURRENT_PATH=$(pwd)
         echo "Current path is: $CURRENT_PATH"
