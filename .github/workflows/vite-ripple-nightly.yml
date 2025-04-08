@@ -32,7 +32,7 @@ jobs:
         CURRENT_PATH=$(pwd)
         echo "Current path is: $CURRENT_PATH"
         cd ~
-        echo "{ \"file:///$CURRENT_PATH/node_modules/@teambit/dot-cli.sign": {} }" > ~/.bitrc.jsonc
+        echo "{ \"file://$CURRENT_PATH/node_modules/@teambit/dot-cli.sign\": {} }" > ~/.bitrc.jsonc
         cat ~/.bitrc.jsonc
     - name: Bit sign pre-bundles/react/ui/docs-app
       run: |
