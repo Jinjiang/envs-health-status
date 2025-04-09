@@ -1,25 +1,21 @@
-name: Vue env - Bare Starter - Nightly
+name: Vue env - Bare Starter - Stable
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * 0'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     container: 
-      image: bitsrc/nightly:latest
+      image: bitsrc/stable:latest
     env:
       HOME: /home/bituser
         
     steps:
     - name: Initialize a workspace
       run: |
-        bvm config set RELEASE_TYPE nightly
-        bvm config
-        bvm versions
-        bvm upgrade
         bit --version
         bit new vue-bare my-bare-vue-workspace --env bitdev.vue/vue-env
     - name: Check initial status

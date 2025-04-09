@@ -1,4 +1,4 @@
-name: Vue env - Bare Starter - Nightly
+name: Vue env - Bare Starter - Debug
 
 on:
   schedule:
@@ -43,6 +43,12 @@ jobs:
         bit create vue-app apps/my-second
         bit install
         bit list
+        # debug start
+        bit app list
+        bit compile
+        bit app list
+        bit install --add-missing-deps
+        # debug end
         bit app list
         bit status
         bit run my-second &

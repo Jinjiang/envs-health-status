@@ -1,0 +1,55 @@
+name: Vue - Quickstart Hello World - Debug
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: bitsrc/nightly:latest
+    env:
+      HOME: /home/bituser
+        
+    steps:
+    - name: Initialize a workspace
+      run: |
+        bvm config set RELEASE_TYPE nightly
+        bvm config
+        bvm versions
+        bvm upgrade
+        bit --version
+        bit new vue-hello-world my-vue-hello-world --aspect teambit.community/starters/hello-world-vue
+    - name: Run the app component
+      run: |
+        cd my-vue-hello-world
+        bit run hello-world-app &
+        checkserver http://localhost:3000
+    - name: Preview components
+      run: |
+        cd my-vue-hello-world
+        # debug start
+        bit compile
+        bit app list
+        # debug end
+        bit start &
+        checkserver http://localhost:3000
+    - name: Collaborate
+      run: |
+        cd my-vue-hello-world
+        bit status
+    - name: Create a local scope, compile and export
+      run: |
+        barescope my-org.my-scope-name my-vue-hello-world
+        cd my-vue-hello-world
+        bit scope rename org.scope-name my-org.my-scope-name --refactor
+        bit link
+        # debug start
+        # bit compile
+        bit install || bit compile
+        # debug end
+        bit tag --message "initial tag"
+        bit export
+    continue-on-error: false

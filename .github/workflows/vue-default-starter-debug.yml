@@ -1,4 +1,4 @@
-name: Vue env - Bare Starter - Nightly
+name: Vue env - Default Starter - Debug
 
 on:
   schedule:
@@ -21,16 +21,16 @@ jobs:
         bvm versions
         bvm upgrade
         bit --version
-        bit new vue-bare my-bare-vue-workspace --env bitdev.vue/vue-env
+        bit new vue my-vue-workspace --env bitdev.vue/vue-env
     - name: Check initial status
       run: |
-        cd my-bare-vue-workspace
+        cd my-vue-workspace
         bit list
         bit status
         bit templates
     - name: Create a new component
       run: |
-        cd my-bare-vue-workspace
+        cd my-vue-workspace
         bit create vue ui/my-first
         bit install
         bit list
@@ -39,28 +39,33 @@ jobs:
         checkserver http://localhost:3000
     - name: Create a new app
       run: |
-        cd my-bare-vue-workspace
+        cd my-vue-workspace
         bit create vue-app apps/my-second
-        bit install
+        # debug start
+        bit install --add-missing-deps
         bit list
+        # debug end
         bit app list
         bit status
         bit run my-second &
         checkserver http://localhost:3000
     - name: Lint and test
       run: |
-        cd my-bare-vue-workspace
+        cd my-vue-workspace
         bit list
         bit status
         bit lint
         bit test
     - name: Create a local scope, compile and export
       run: |
-        barescope my-org.my-scope-name my-bare-vue-workspace
-        cd my-bare-vue-workspace
+        barescope my-org.my-scope-name my-vue-workspace
+        cd my-vue-workspace
         bit scope rename org.scope-name my-org.my-scope-name --refactor
         bit link
-        bit compile
+        # debug start
+        # bit compile
+        bit install || bit compile
+        # debug end
         bit tag --message "initial tag"
         bit export
     continue-on-error: false
