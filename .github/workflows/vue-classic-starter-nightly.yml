@@ -1,4 +1,4 @@
-name: Vue env - Classic Starter (nightly) (Debug)
+name: Vue env - Classic Starter - Nightly
 
 on:
   schedule:
@@ -41,9 +41,6 @@ jobs:
       run: |
         cd my-vue-workspace
         bit create vue-app apps/my-second
-        # bit use apps/my-second
-        # debug
-        # bit install
         bit install --add-missing-deps
         bit list
         bit app list
@@ -63,9 +60,7 @@ jobs:
         cd my-vue-workspace
         bit scope rename org.scope-name my-org.my-scope-name --refactor
         bit link
-        # debug
-        # bit compile
-        bit install || bit compile
+        bit compile
         bit tag --message "initial tag"
         bit export
     continue-on-error: false
