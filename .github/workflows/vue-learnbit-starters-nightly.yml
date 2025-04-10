@@ -1,4 +1,4 @@
-name: Vue env - Learnbit - starters (nightly)
+name: Vue env - Learnbit - Starters - Nightly
 
 on:
   schedule:
@@ -27,8 +27,6 @@ jobs:
       - name: Run the app component (design system)
         run: |
           cd my-vue-design-system
-          # debug
-          bit compile
           bit app list
           bit run my-app &
           checkserver http://localhost:3000
@@ -47,10 +45,9 @@ jobs:
           cd my-vue-design-system
           bit scope rename org.scope-name my-org.my-scope-name --refactor
           bit link
-          # debug
-          bit compile --log error
-          bit tag --message "initial tag" --log error
-          bit export --log error
+          bit compile
+          bit tag --message "initial tag"
+          bit export
 
       - name: Initialize a workspace (data-fetching)
         run: |
@@ -58,8 +55,6 @@ jobs:
       - name: Run the app component (data-fetching)
         run: |
           cd my-vue-data-fetching
-          # debug
-          bit compile
           bit app list
           bit run brewery-app &
           checkserver http://localhost:3000
@@ -88,8 +83,6 @@ jobs:
       - name: Run the app component (graphql)
         run: |
           cd my-vue-graphql
-          # debug
-          bit compile
           bit app list
           bit run my-apollo-server --port 4000 &
           checkserver http://localhost:4000
@@ -112,6 +105,5 @@ jobs:
           bit link
           bit compile
           bit tag --message "initial tag"
-          # debug
-          bit export --log error
+          bit export
     continue-on-error: false
