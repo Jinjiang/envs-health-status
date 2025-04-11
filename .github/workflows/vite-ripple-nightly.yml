@@ -33,10 +33,18 @@ jobs:
         echo "Current path is: $CURRENT_DIR"
         echo "{ \"file://$CURRENT_DIR/node_modules/@teambit/dot-cli.sign\": {} }" > ~/.bitrc.jsonc
         cat ~/.bitrc.jsonc
+
+    # pre-bundled docs app
+    - name: Bit sign bitdev.react/preview/react-docs-app
+      run: |
+        cd my-vite-workspace
+        bit sign bitdev.react/preview/react-docs-app --multiple --rebuild --log error
     - name: Bit sign pre-bundles/react/ui/docs-app
       run: |
         cd my-vite-workspace
         bit sign teambit.vite/pre-bundles/react/ui/docs-app --multiple --rebuild --log error
+
+    # vite examples
     - name: Bit sign examples/react/my-component
       run: |
         cd my-vite-workspace
@@ -49,22 +57,24 @@ jobs:
       run: |
         cd my-vite-workspace
         bit sign teambit.vite/examples/react/my-react-preview --multiple --rebuild --log error
-    # - name: Bit sign examples/vue/my-component
-    #   run: |
-    #     cd my-vite-workspace
-    #     bit sign teambit.vite/examples/vue/my-component --multiple --rebuild --log error
-    # - name: Bit sign examples/vue/my-second
-    #   run: |
-    #     cd my-vite-workspace
-    #     bit sign teambit.vite/examples/vue/my-second --multiple --rebuild --log error
-    # - name: Bit sign examples/vue/my-vue-env
-    #   run: |
-    #     cd my-vite-workspace
-    #     bit sign teambit.vite/examples/vue/my-vue-env --multiple --rebuild --log error
-    # - name: Bit sign examples/vue/my-vue-preview
-    #   run: |
-    #     cd my-vite-workspace
-    #     bit sign teambit.vite/examples/vue/my-vue-preview --multiple --rebuild --log error
+    - name: Bit sign examples/vue/my-component
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/vue/my-component --multiple --rebuild --log error
+    - name: Bit sign examples/vue/my-second
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/vue/my-second --multiple --rebuild --log error
+    - name: Bit sign examples/vue/my-vue-env
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/vue/my-vue-env --multiple --rebuild --log error
+    - name: Bit sign examples/vue/my-vue-preview
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/examples/vue/my-vue-preview --multiple --rebuild --log error
+
+    # public 3
     - name: Bit sign vite-bundler
       run: |
         cd my-vite-workspace
@@ -73,12 +83,43 @@ jobs:
       run: |
         cd my-vite-workspace
         bit sign teambit.vite/vite-dev-server --multiple --rebuild --log error
-    - name: Bit sign vite-utils
-      run: |
-        cd my-vite-workspace
-        bit sign teambit.vite/vite-utils --multiple --rebuild --log error
     - name: Bit sign vitest-tester
       run: |
         cd my-vite-workspace
         bit sign teambit.vite/vitest-tester --multiple --rebuild --log error
+
+    # utils
+    - name: Bit sign vite-utils
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vite-utils --multiple --rebuild --log error
+    - name: Bit sign vite-utils-component-alias
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vite/utils/component-alias --multiple --rebuild --log error
+    - name: Bit sign vite-utils-entries
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vite/utils/entries --multiple --rebuild --log error
+    - name: Bit sign vite-utils-host-deps
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vite/utils/host-deps --multiple --rebuild --log error
+    - name: Bit sign vite-utils-mdx-admonitions-adapter
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vite/utils/mdx-admonitions-adapter --multiple --rebuild --log error
+    - name: Bit sign vite-utils-merge-configs
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vite/utils/merge-configs --multiple --rebuild --log error
+    - name: Bit sign vite-utils-merge-transformers
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vite/utils/merge-transformers --multiple --rebuild --log error
+    - name: Bit sign vite-utils-virtual-html-entry
+      run: |
+        cd my-vite-workspace
+        bit sign teambit.vite/vite/utils/virtual-html-entry --multiple --rebuild --log error
+
     continue-on-error: false
