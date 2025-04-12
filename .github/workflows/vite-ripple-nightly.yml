@@ -96,30 +96,30 @@ jobs:
     - name: Bit sign vite-utils-component-alias
       run: |
         cd my-vite-workspace
-        bit sign teambit.vite/vite/utils/component-alias --multiple --rebuild --log error
+        bit sign teambit.vite/utils/component-alias --multiple --rebuild --log error
     - name: Bit sign vite-utils-entries
       run: |
         cd my-vite-workspace
-        bit sign teambit.vite/vite/utils/entries --multiple --rebuild --log error
+        bit sign teambit.vite/utils/entries --multiple --rebuild --log error
     - name: Bit sign vite-utils-host-deps
       run: |
         cd my-vite-workspace
-        bit sign teambit.vite/vite/utils/host-deps --multiple --rebuild --log error
+        bit sign teambit.vite/utils/host-deps --multiple --rebuild --log error
     - name: Bit sign vite-utils-mdx-admonitions-adapter
       run: |
         cd my-vite-workspace
-        bit sign teambit.vite/vite/utils/mdx-admonitions-adapter --multiple --rebuild --log error
+        bit sign teambit.vite/utils/mdx-admonitions-adapter --multiple --rebuild --log error
     - name: Bit sign vite-utils-merge-configs
       run: |
         cd my-vite-workspace
-        bit sign teambit.vite/vite/utils/merge-configs --multiple --rebuild --log error
+        bit sign teambit.vite/utils/merge-configs --multiple --rebuild --log error
     - name: Bit sign vite-utils-merge-transformers
       run: |
         cd my-vite-workspace
-        bit sign teambit.vite/vite/utils/merge-transformers --multiple --rebuild --log error
+        bit sign teambit.vite/utils/merge-transformers --multiple --rebuild --log error
     - name: Bit sign vite-utils-virtual-html-entry
       run: |
         cd my-vite-workspace
-        bit sign teambit.vite/vite/utils/virtual-html-entry --multiple --rebuild --log error
+        bit sign teambit.vite/utils/virtual-html-entry --multiple --rebuild --log error
 
     continue-on-error: false
