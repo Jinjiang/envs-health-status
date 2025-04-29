@@ -33,58 +33,42 @@ jobs:
         echo "Current path is: $CURRENT_DIR"
         echo "{ \"file://$CURRENT_DIR/node_modules/@teambit/dot-cli.sign\": {} }" > ~/.bitrc.jsonc
         cat ~/.bitrc.jsonc
-    - name: Bit sign dev-services/preview/vue-mounter
-      run: |
-        cd my-vue-workspace
-        bit sign bitdev.vue/dev-services/preview/vue-mounter --multiple --rebuild --log error
-    - name: Bit sign dev-services/compiler/vue-sfc-compiler
-      run: |
-        cd my-vue-workspace
-        bit sign bitdev.vue/dev-services/compiler/vue-sfc-compiler --multiple --rebuild --log error
-    - name: Bit sign dev-services/detector/vue-detector
-      run: |
-        cd my-vue-workspace
-        bit sign bitdev.vue/dev-services/detector/vue-detector --multiple --rebuild --log error
-    - name: Bit sign dev-services/linter/vue-eslint-config
-      run: |
-        cd my-vue-workspace
-        bit sign bitdev.vue/dev-services/linter/vue-eslint-config --multiple --rebuild --log error
-    - name: Bit sign dev-services/compiler/vue-compiler
-      run: |
-        cd my-vue-workspace
-        bit sign bitdev.vue/dev-services/compiler/vue-compiler --multiple --rebuild --log error
-    - name: Bit sign dev-services/tester/vue-jest-config
-      run: |
-        cd my-vue-workspace
-        bit sign bitdev.vue/dev-services/tester/vue-jest-config --multiple --rebuild --log error
-    - name: Bit sign dev-services/preview/vue-docs-template
-      run: |
-        cd my-vue-workspace
-        bit sign bitdev.vue/dev-services/preview/vue-docs-template --multiple --rebuild --log error
+
     - name: Bit sign dev-services/compiler/ts-compiler
       run: |
         cd my-vue-workspace
         bit sign bitdev.vue/dev-services/compiler/ts-compiler --multiple --rebuild --log error
-    - name: Bit sign templates/vue-generators
+    - name: Bit sign dev-services/compiler/vue-compiler
       run: |
         cd my-vue-workspace
-        bit sign bitdev.vue/templates/vue-generators --multiple --rebuild --log error
-    - name: Bit sign templates/vue-starters
+        bit sign bitdev.vue/dev-services/compiler/vue-compiler --multiple --rebuild --log error
+    - name: Bit sign dev-services/compiler/vue-sfc-compiler
       run: |
         cd my-vue-workspace
-        bit sign bitdev.vue/templates/vue-starters --multiple --rebuild --log error
-    - name: Bit sign dev-services/tester/dummy-tester
+        bit sign bitdev.vue/dev-services/compiler/vue-sfc-compiler --multiple --rebuild --log error
+    - name: Bit sign dev-services/compiler/vue-sfc-compiler-core
       run: |
         cd my-vue-workspace
-        bit sign bitdev.vue/dev-services/tester/dummy-tester --multiple --rebuild --log error
-    - name: Bit sign dev-services/webpack/vue-webpack
+        bit sign bitdev.vue/dev-services/compiler/vue-sfc-compiler-core --multiple --rebuild --log error
+
+    - name: Bit sign dev-services/detector/vue-detector
       run: |
         cd my-vue-workspace
-        bit sign bitdev.vue/dev-services/webpack/vue-webpack --multiple --rebuild --log error
+        bit sign bitdev.vue/dev-services/detector/vue-detector --multiple --rebuild --log error
+
+    - name: Bit sign dev-services/linter/vue-eslint-config
+      run: |
+        cd my-vue-workspace
+        bit sign bitdev.vue/dev-services/linter/vue-eslint-config --multiple --rebuild --log error
+
     - name: Bit sign dev-services/preview/dummy-preview
       run: |
         cd my-vue-workspace
         bit sign bitdev.vue/dev-services/preview/dummy-preview --multiple --rebuild --log error
+    - name: Bit sign dev-services/preview/vue-webpack-config
+      run: |
+        cd my-vue-workspace
+        bit sign bitdev.vue/dev-services/preview/vue-webpack-config --multiple --rebuild --log error
     - name: Bit sign dev-services/preview/vue-webpack-preview
       run: |
         cd my-vue-workspace
@@ -93,6 +77,42 @@ jobs:
       run: |
         cd my-vue-workspace
         bit sign bitdev.vue/dev-services/preview/vue-vite-preview --multiple --rebuild --log error
+
+    - name: Bit sign dev-services/preview/vue-docs-raw-template
+      run: |
+        cd my-vue-workspace
+        bit sign bitdev.vue/dev-services/preview/vue-docs-raw-template --multiple --rebuild --log error
+    - name: Bit sign dev-services/preview/vue-docs-template
+      run: |
+        cd my-vue-workspace
+        bit sign bitdev.vue/dev-services/preview/vue-docs-template --multiple --rebuild --log error
+    - name: Bit sign dev-services/preview/vue-mounter
+      run: |
+        cd my-vue-workspace
+        bit sign bitdev.vue/dev-services/preview/vue-mounter --multiple --rebuild --log error
+
+    - name: Bit sign dev-services/tester/dummy-tester
+      run: |
+        cd my-vue-workspace
+        bit sign bitdev.vue/dev-services/tester/dummy-tester --multiple --rebuild --log error
+    - name: Bit sign dev-services/tester/vue-jest-config
+      run: |
+        cd my-vue-workspace
+        bit sign bitdev.vue/dev-services/tester/vue-jest-config --multiple --rebuild --log error
+
+    - name: Bit sign templates/vue-generators
+      run: |
+        cd my-vue-workspace
+        bit sign bitdev.vue/templates/vue-generators --multiple --rebuild --log error
+    - name: Bit sign templates/vue-starters
+      run: |
+        cd my-vue-workspace
+        bit sign bitdev.vue/templates/vue-starters --multiple --rebuild --log error
+
+    - name: Bit sign envs/vue-base-env
+      run: |
+        cd my-vue-workspace
+        bit sign bitdev.vue/envs/vue-base-env --multiple --rebuild --log error
     - name: Bit sign envs/vue-modern-env
       run: |
         cd my-vue-workspace
@@ -101,30 +121,25 @@ jobs:
       run: |
         cd my-vue-workspace
         bit sign bitdev.vue/envs/vue-classic-env --multiple --rebuild --log error
+
     - name: Bit sign examples/modern/my-vue-env
       run: |
         cd my-vue-workspace
         bit sign bitdev.vue/examples/modern/my-vue-env --multiple --rebuild --log error
-    - name: Bit sign envs/vue-base-env
-      run: |
-        cd my-vue-workspace
-        bit sign bitdev.vue/envs/vue-base-env --multiple --rebuild --log error
     - name: Bit sign examples/classic/my-vue-env
       run: |
         cd my-vue-workspace
         bit sign bitdev.vue/examples/classic/my-vue-env --multiple --rebuild --log error
+
     - name: Bit sign vue-env
       run: |
         cd my-vue-workspace
         bit sign bitdev.vue/vue-env --multiple --rebuild --log error
+
     - name: Bit sign examples/hello-world
       run: |
         cd my-vue-workspace
         bit sign bitdev.vue/examples/hello-world --multiple --rebuild --log error
-    - name: Bit sign readme
-      run: |
-        cd my-vue-workspace
-        bit sign bitdev.vue/readme --multiple --rebuild --log error
     - name: Bit sign examples/my-vue-wrapper
       run: |
         cd my-vue-workspace
@@ -133,4 +148,10 @@ jobs:
       run: |
         cd my-vue-workspace
         bit sign bitdev.vue/examples/my-vue-env --multiple --rebuild --log error
+
+    - name: Bit sign readme
+      run: |
+        cd my-vue-workspace
+        bit sign bitdev.vue/readme --multiple --rebuild --log error
+
     continue-on-error: false
