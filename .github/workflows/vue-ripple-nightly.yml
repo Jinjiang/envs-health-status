@@ -46,10 +46,10 @@ jobs:
       run: |
         cd my-vue-workspace
         bit sign bitdev.vue/dev-services/compiler/vue-sfc-compiler --multiple --rebuild --log error
-    - name: Bit sign dev-services/compiler/vue-sfc-compiler-core
-      run: |
-        cd my-vue-workspace
-        bit sign bitdev.vue/dev-services/compiler/vue-sfc-compiler-core --multiple --rebuild --log error
+    # - name: Bit sign dev-services/compiler/vue-sfc-compiler-core
+    #   run: |
+    #     cd my-vue-workspace
+    #     bit sign bitdev.vue/dev-services/compiler/vue-sfc-compiler-core --multiple --rebuild --log error
 
     - name: Bit sign dev-services/detector/vue-detector
       run: |
