@@ -116,6 +116,9 @@ jobs:
         bit scope rename org.scope-name my-org.my-scope-name --refactor
         bit link
         bit compile
+        # debug
+        bit status
+        bit diff
         bit tag --message "initial tag"
         bit export
     continue-on-error: false
