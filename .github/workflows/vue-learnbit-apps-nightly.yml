@@ -40,7 +40,7 @@ jobs:
         bit import learnbit-vue.data-fetching/brewery-app
         bit import learnbit-vue.graphql/servers/my-apollo-server
         bit import learnbit-vue.graphql/user-app
-        # bit install
+        bit install
         # check
         bit list
         cat workspace.jsonc
