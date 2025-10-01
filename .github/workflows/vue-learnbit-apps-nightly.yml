@@ -40,18 +40,7 @@ jobs:
         bit import learnbit-vue.data-fetching/brewery-app
         bit import learnbit-vue.graphql/servers/my-apollo-server
         bit import learnbit-vue.graphql/user-app
-        # use
-        bit use my-vite-app
-        bit use my-vite-hello-app
-        bit use my-vite-ssr-app
-        bit use apps/global-theme
-        bit use apps/nested-themes
-        bit use brewery-app
-        bit use servers/my-apollo-server
-        bit use user-app
-        # debug
-        bit status
-        bit install
+        # bit install
         # check
         bit list
         cat workspace.jsonc
@@ -116,9 +105,6 @@ jobs:
         bit scope rename org.scope-name my-org.my-scope-name --refactor
         bit link
         bit compile
-        # debug
-        bit status
-        bit diff
         bit tag --message "initial tag"
         bit export
     continue-on-error: false
