@@ -41,16 +41,16 @@ jobs:
         bit import learnbit-vue.graphql/servers/my-apollo-server
         bit import learnbit-vue.graphql/user-app
         # use
-        bit use my-vite-app
-        bit use my-vite-hello-app
-        bit use my-vite-ssr-app
-        bit use apps/global-theme
-        bit use apps/nested-themes
-        bit use brewery-app
-        bit use servers/my-apollo-server
-        bit use user-app
+        # bit use my-vite-app
+        # bit use my-vite-hello-app
+        # bit use my-vite-ssr-app
+        # bit use apps/global-theme
+        # bit use apps/nested-themes
+        # bit use brewery-app
+        # bit use servers/my-apollo-server
+        # bit use user-app
         # install
-        bit install
+        # bit install
         # check
         bit list
         cat workspace.jsonc
