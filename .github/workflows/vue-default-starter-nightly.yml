@@ -32,7 +32,7 @@ jobs:
       run: |
         cd my-vue-workspace
         bit create vue ui/my-first
-        bit install
+        # bit install
         bit list
         bit status
         bit start &
