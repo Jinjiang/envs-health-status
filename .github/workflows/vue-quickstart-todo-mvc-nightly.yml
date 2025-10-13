@@ -25,7 +25,7 @@ jobs:
     - name: Run the app component
       run: |
         cd my-vue-todomvc
-        bit install --add-missing-deps
+        # bit install --add-missing-deps
         bit run todomvc-app &
         checkserver http://localhost:3000
     - name: Preview components
