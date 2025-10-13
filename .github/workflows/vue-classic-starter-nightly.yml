@@ -32,7 +32,7 @@ jobs:
       run: |
         cd my-vue-workspace
         bit create vue ui/my-first
-        bit install
+        # bit install
         bit list
         bit status
         bit start &
@@ -41,7 +41,7 @@ jobs:
       run: |
         cd my-vue-workspace
         bit create vue-app apps/my-second
-        bit install --add-missing-deps
+        # bit install --add-missing-deps
         bit list
         bit app list
         bit status
