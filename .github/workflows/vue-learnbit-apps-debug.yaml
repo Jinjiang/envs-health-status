@@ -1,4 +1,4 @@
-name: Vue env - Learnbit - Apps - Nightly
+name: Vue env - Learnbit - Apps - Debug
 
 on:
   schedule:
