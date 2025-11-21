@@ -41,17 +41,6 @@ jobs:
         bit import learnbit-vue.graphql/servers/my-apollo-server
         bit import learnbit-vue.graphql/user-app
         # debug start
-        # https://github.com/teambit/bit/pull/10044
-        # use
-        bit use my-vite-app
-        bit use my-vite-hello-app
-        bit use my-vite-ssr-app
-        bit use apps/global-theme
-        bit use apps/nested-themes
-        bit use brewery-app
-        bit use servers/my-apollo-server
-        bit use user-app
-        # install
         bit install
         # debug end
         # check
