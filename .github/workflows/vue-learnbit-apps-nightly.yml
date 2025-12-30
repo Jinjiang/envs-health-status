@@ -41,7 +41,6 @@ jobs:
         bit import learnbit-vue.graphql/servers/my-apollo-server
         bit import learnbit-vue.graphql/user-app
         # debug start
-        bit install
         bit use my-vite-app
         bit use my-vite-hello-app
         bit use my-vite-ssr-app
@@ -50,6 +49,7 @@ jobs:
         bit use brewery-app
         bit use servers/my-apollo-server
         bit use user-app
+        bit install
         # debug end
         # check
         bit list
