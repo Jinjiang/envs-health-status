@@ -40,6 +40,9 @@ jobs:
       run: |
         barescope my-org.my-scope-name my-vue-hello-world
         cd my-vue-hello-world
+        # debug start
+        bit install @vitest/coverage-v8 @mdx-js/mdx
+        # debug end
         bit scope rename org.scope-name my-org.my-scope-name --refactor
         bit link
         bit compile
