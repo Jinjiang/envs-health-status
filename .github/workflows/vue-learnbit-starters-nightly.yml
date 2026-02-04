@@ -16,10 +16,12 @@ jobs:
     steps:
       - name: Show BVM config
         run: |
-          bvm config set RELEASE_TYPE nightly
-          bvm config
-          bvm versions
-          bvm upgrade
+          # debug start
+          # bvm config set RELEASE_TYPE nightly
+          # bvm config
+          # bvm versions
+          # bvm upgrade
+          # debug end
           bit --version
       - name: Initialize a workspace (design system)
         run: |
