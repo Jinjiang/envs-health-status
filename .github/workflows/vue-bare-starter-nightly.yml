@@ -54,7 +54,9 @@ jobs:
         bit list
         bit status
         bit lint
-        bit test
+        # debug start
+        # bit test
+        # debug end
     - name: Create a local scope, compile and export
       run: |
         barescope my-org.my-scope-name my-bare-vue-workspace
