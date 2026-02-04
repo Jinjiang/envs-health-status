@@ -25,6 +25,9 @@ jobs:
     - name: Check initial status
       run: |
         cd my-bare-vue-workspace
+        # debug start
+        bit install vue vite-plugin-node-polyfills
+        # debug end
         bit list
         bit status
         bit templates
