@@ -21,6 +21,8 @@ jobs:
           # bvm config
           # bvm versions
           # bvm upgrade
+          bvm install 1.13.21
+          bvm use 1.13.21
           # debug end
           bit --version
       - name: Initialize a workspace (design system)
