@@ -49,7 +49,7 @@ jobs:
         bit use brewery-app
         bit use servers/my-apollo-server
         bit use user-app
-        bit install
+        bit install @vitest/coverage-v8 @mdx-js/mdx
         # debug end
         # check
         bit list
