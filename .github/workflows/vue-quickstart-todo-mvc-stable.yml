@@ -38,6 +38,9 @@ jobs:
       run: |
         barescope my-org.my-scope-name my-vue-todomvc
         cd my-vue-todomvc
+        # debug start
+        bit install @mdx-js/mdx @vitest/coverage-v8
+        # debug end
         bit scope rename org.scope-name my-org.my-scope-name --refactor
         bit link
         bit compile
