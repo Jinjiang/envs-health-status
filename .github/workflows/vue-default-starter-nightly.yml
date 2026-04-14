@@ -22,11 +22,7 @@ jobs:
         bvm upgrade
         bit --version
         # debug start
-        # cat $HOME/.npmrc
-        # echo "check npmrc"
-        # echo "@acemir:registry=https://registry.npmjs.org/" >> $HOME/.npmrc
-        # echo "update npmrc"
-        # cat $HOME/.npmrc
+        echo "@acemir:registry=https://registry.npmjs.org/" >> $HOME/.npmrc
         # debug end
         bit new vue my-vue-workspace --env bitdev.vue/vue-env
     - name: Check initial status
