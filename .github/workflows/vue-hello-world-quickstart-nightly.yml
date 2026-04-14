@@ -21,6 +21,9 @@ jobs:
         bvm versions
         bvm upgrade
         bit --version
+        # debug start
+        echo "@acemir:registry=https://registry.npmjs.org/" >> $HOME/.npmrc
+        # debug end
         bit new vue-hello-world my-vue-hello-world --aspect teambit.community/starters/hello-world-vue
     - name: Run the app component
       run: |

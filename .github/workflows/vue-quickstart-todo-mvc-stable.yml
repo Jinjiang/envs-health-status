@@ -19,6 +19,9 @@ jobs:
         bvm config
     - name: Initialize a workspace
       run: |
+        # debug start
+        echo "@acemir:registry=https://registry.npmjs.org/" >> $HOME/.npmrc
+        # debug end
         bit new vue-todomvc my-vue-todomvc --env teambit.community/starters/todomvc
     - name: Run the app component
       run: |
