@@ -25,10 +25,6 @@ jobs:
           bvm use 1.13.21
           # debug end
           bit --version
-          # debug start
-          echo "@acemir:registry=https://registry.npmjs.org/" >> $HOME/.npmrc
-          # debug end
-      - name: Initialize a workspace (design system)
         run: |
           bit new vue-design-system my-vue-design-system --aspect learnbit-vue.design-system/starters/design-system
       - name: Run the app component (design system)

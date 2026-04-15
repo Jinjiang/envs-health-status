@@ -21,10 +21,6 @@ jobs:
         bvm versions
         bvm upgrade
         bit --version
-        # debug start
-        echo "@acemir:registry=https://registry.npmjs.org/" >> $HOME/.npmrc
-        # debug end
-        bit init my-vite-workspace --bare --log error
     - name: Initialize a bit sign directory
       run: |
         mkdir ~/bit-sign
