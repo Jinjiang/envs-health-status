@@ -21,6 +21,7 @@ jobs:
         bvm versions
         bvm upgrade
         bit --version
+        bit init my-vue-workspace --bare --log error
     - name: Initialize a bit sign directory
       run: |
         mkdir ~/bit-sign

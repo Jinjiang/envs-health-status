@@ -21,6 +21,7 @@ jobs:
         bvm versions
         bvm upgrade
         bit --version
+        bit new vue my-vue-workspace --env bitdev.vue/envs/vue-modern-env
     - name: Check initial status
       run: |
         cd my-vue-workspace
