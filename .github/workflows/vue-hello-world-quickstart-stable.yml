@@ -37,6 +37,7 @@ jobs:
         barescope my-org.my-scope-name my-vue-hello-world
         cd my-vue-hello-world
         bit scope rename org.scope-name my-org.my-scope-name --refactor
+        bit install
         bit link
         bit compile
         bit tag --message "initial tag"

@@ -48,6 +48,7 @@ jobs:
           barescope my-org.my-scope-name my-vue-design-system
           cd my-vue-design-system
           bit scope rename org.scope-name my-org.my-scope-name --refactor
+          bit install
           bit link
           bit compile
           bit tag --message "initial tag"
@@ -76,6 +77,7 @@ jobs:
           barescope my-org.my-scope-name1 my-vue-data-fetching
           cd my-vue-data-fetching
           bit scope rename org.scope-name my-org.my-scope-name1 --refactor
+          bit install
           bit link
           bit compile
           bit tag --message "initial tag"
@@ -106,6 +108,7 @@ jobs:
           barescope my-org.my-scope-name2 my-vue-graphql
           cd my-vue-graphql
           bit scope rename org.scope-name my-org.my-scope-name2 --refactor --log error
+          bit install
           bit link
           bit compile
           bit tag --message "initial tag"
