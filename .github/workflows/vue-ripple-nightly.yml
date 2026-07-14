@@ -83,11 +83,11 @@ jobs:
     #   run: |
     #     cd my-vue-workspace
     #     bit sign bitdev.vue/dev-services/preview/vue-docs-raw-template --multiple --rebuild --log error
+    # - name: Bit sign dev-services/preview/vue-docs-template
+    #   run: |
+    #     cd my-vue-workspace
+    #     bit sign bitdev.vue/dev-services/preview/vue-docs-template --multiple --rebuild --log error
     # debug off end
-    - name: Bit sign dev-services/preview/vue-docs-template
-      run: |
-        cd my-vue-workspace
-        bit sign bitdev.vue/dev-services/preview/vue-docs-template --multiple --rebuild --log error
     - name: Bit sign dev-services/preview/vue-mounter
       run: |
         cd my-vue-workspace
